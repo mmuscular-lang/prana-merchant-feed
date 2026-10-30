@@ -3,7 +3,8 @@ name: PRANA Merchant feed
 on:
   workflow_dispatch:
   schedule:
-    - cron: '17 3 * * *'
+    - cron: '45 23 * * *'
+      timezone: 'Europe/Warsaw'
 
 permissions:
   contents: read
