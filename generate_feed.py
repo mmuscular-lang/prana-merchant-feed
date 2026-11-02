@@ -28,6 +28,7 @@ HANDLES = (
     "meditation-woods",
     "zen-ritual",
     "fig-tea-opium",
+    "facet-z-wasem",
 )
 GOOGLE_NS = "http://base.google.com/ns/1.0"
 ET.register_namespace("g", GOOGLE_NS)
@@ -164,7 +165,7 @@ def as_feed(products: list[dict]) -> tuple[bytes, int]:
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--output", type=Path, default=Path("merchant-feed.xml"))
-    parser.add_argument("--test-fixtures", type=Path, help="Offline test: JSON file with 7 product objects")
+    parser.add_argument("--test-fixtures", type=Path, help="Offline test: JSON file with the configured product objects")
     args = parser.parse_args()
     if args.test_fixtures:
         products = json.loads(args.test_fixtures.read_text(encoding="utf-8"))
